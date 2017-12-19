@@ -3,7 +3,7 @@
     <head>
         <title>Cryptoapp</title>
         <link rel="stylesheet" type="text/css" href="style.css"/>
-        
+    
     </head>
     <body>
         <h3>Cryptoapp</h3>
@@ -19,7 +19,7 @@
   <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
   <p>Value: <span id="demo"></span></p>
 </div>
-
+<div class="btcwdgt-price"></div>
 <script>
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
@@ -29,6 +29,32 @@ slider.oninput = function() {
   output.innerHTML = this.value;
 }
 </script>
+        <script>
+  (function(b,i,t,C,O,I,N) {
+    window.addEventListener('load',function() {
+      if(b.getElementById(C))return;
+      I=b.createElement(i),N=b.getElementsByTagName(i)[0];
+      I.src=t;I.id=C;N.parentNode.insertBefore(I, N);
+    },false)
+  })(document,'script','https://widgets.bitcoin.com/widget.js','btcwdgt');
+</script>
+        <script type="text/javascript">
+baseUrl = "https://widgets.cryptocompare.com/";
+var scripts = document.getElementsByTagName("script");
+var embedder = scripts[ scripts.length - 1 ];
+var cccTheme = {"General":{"background":"#000","priceText":"#fff"},"Currency":{"color":"#fff"}};
+(function (){
+var appName = encodeURIComponent(window.location.hostname);
+if(appName==""){appName="local";}
+var s = document.createElement("script");
+s.type = "text/javascript";
+s.async = true;
+var theUrl = baseUrl+'serve/v3/coin/header?fsyms=BTC,ETH,XMR,LTC,DASH&tsyms=USD,EUR';
+s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+embedder.parentNode.appendChild(s);
+})();
+</script>
+
         <p>investment slider eth</p>
         <p>investment slider litecoin</p>
     </body>

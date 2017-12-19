@@ -3,6 +3,7 @@
     <head>
         <title>Cryptoapp</title>
         <link rel="stylesheet" type="text/css" href="style.css"/>
+       
     </head>
     <body>
         <h3>Cryptoapp</h3>
@@ -14,6 +15,22 @@
             <a href="about.html">About</a>
             <input type="text" placeholder="Search...">
         </div>
+        <script type="text/javascript">
+baseUrl = "https://widgets.cryptocompare.com/";
+var scripts = document.getElementsByTagName("script");
+var embedder = scripts[ scripts.length - 1 ];
+(function (){
+var appName = encodeURIComponent(window.location.hostname);
+if(appName==""){appName="local";}
+var s = document.createElement("script");
+s.type = "text/javascript";
+s.async = true;
+var theUrl = baseUrl+'serve/v1/coin/feed?fsym=ETH&tsym=USD&feedType=CoinTelegraph';
+s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+embedder.parentNode.appendChild(s);
+})();
+</script>
+
         <p>Welcome to this God forsaken webpage where we just want to steal your memes</p>
         <p>Insert maybe news about the top three cryptos here and have our twitter feed along the right hand side with an overall total of their account</p>
     </body>
