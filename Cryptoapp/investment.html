@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cryptoapp</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        
+    </head>
+    <body>
+        <h3>Cryptoapp</h3>
+        <div class="topnav" id="myTopnav">
+            <a  href="Main.html">Home</a>
+            <a href="Account.html">Account</a>
+            <a class="active" href="investment.html">Investments</a>
+            <a href="support.html">Support</a>
+            <a href="about.html">About</a>
+            <input type="text" placeholder="Search...">
+        </div>
+        <div id="slidecontainer">
+  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+  <p>Value: <span id="demo"></span></p>
+</div>
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+        <p>investment slider eth</p>
+        <p>investment slider litecoin</p>
+    </body>
+</html>
